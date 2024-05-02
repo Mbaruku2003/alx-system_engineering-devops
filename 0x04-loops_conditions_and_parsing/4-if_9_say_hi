@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#we will use while loop to create Best School ten times but if we are at nine we get out of the loop
+i=0
+while [ $i -lt 10 ]
+do
+	if [ $i -eq 9 ]
+	then
+		echo "Hi"
+	fi
+	echo "Best School"
+	(( i++ ))
+done
