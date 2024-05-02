@@ -12,7 +12,7 @@ do
 	elif (( i % 3 == 0))
 	then
 		echo "Fizz"
-	elif (( num % 5 == 0 ))
+	elif (( i % 5 == 0 ))
 	then
 		echo "Buzz"
 	else
