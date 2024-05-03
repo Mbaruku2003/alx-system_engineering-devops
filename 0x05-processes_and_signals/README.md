@@ -34,3 +34,17 @@ ps -A - diplays both system processses and user processes
 ps -x - displays all processes including those thatdont have a controling TTY
 ps -u - displays information about processes owned by a specific user
 ps -f -display process information including process hierachy i.e parent child information
+
+
+TASK3
+i learnt the uses of greap i.e
+grep is used to search for strings in files e.g grep "leo" Lenaje.txt searches for a name in the lenaje .yxt file
+grep -i -used to perform case incensitive search that is searches that dont care wheather the whole word is a capital or small letter
+grep -r used to search for a string within a whole file, directory and subdirectories
+grep -l "string" *fileend is used to display only file names that have matches
+
+ps -aux |grep "bash" - displays lines with the bash word allowing you to easily get the pid of your program
+
+TASK 4
+
+pgrep -l bash - displays the PID, along with the process name, of processes whose name contain the word bash.
