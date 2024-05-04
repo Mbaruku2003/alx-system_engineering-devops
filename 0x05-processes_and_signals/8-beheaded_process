@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 #kills 7-highlander
-if pgrep -x "7-highander" > /dev/null
-then
-	pkill -x "7-highlander"
-fi
+pkill -9 "7-highlander" -f
