@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 #displays first line indefinately and after a sleep of 2 another line
+trap 'echo "I am invincible!!!"' 15
 while true;
 do
 	echo "To infinity and beyond"
-	echo "To infinity and beyond"
 	sleep 2
-	if [ -n "$id"]
-	then
-		echo "I am invincible!!!"
-	fi
 done
