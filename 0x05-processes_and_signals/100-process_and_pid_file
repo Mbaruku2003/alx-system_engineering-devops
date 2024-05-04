@@ -4,8 +4,13 @@
 #Displays I hate the kill command when receiving a SIGTERM signal
 #Displays Y U no love me?! when receiving a SIGINT signal
 #Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
-PID=$$
 PID_FILE="/var/run/myscript.pid"
+if [ -e "PID_FILE" ]
+then
+	exit 1
+fi
+PID=$$
+echo "$PID" > "$PID_FILE"
 cleanup()
 {
 	if [ -e "PID_FILE" ]
@@ -15,7 +20,6 @@ cleanup()
 	exit 0
 }
 trap 'cleanup' SIGQUIT SIGTERM
-echo "$PID" > "$PID_FILE"
 while true;
 do
 	echo "To infinity and beyond"
