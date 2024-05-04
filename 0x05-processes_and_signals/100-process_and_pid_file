@@ -5,25 +5,17 @@
 #Displays Y U no love me?! when receiving a SIGINT signal
 #Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
 PID_FILE="/var/run/myscript.pid"
-if [ -e "PID_FILE" ]
-then
-	exit 1
-fi
-PID=$$
-echo "$PID" > "$PID_FILE"
+echo $$ > "PID_FILE"
 cleanup()
 {
-	if [ -e "PID_FILE" ]
-	then
-		rm "$PID_FILE"
-	fi
+	rm "$PID_FILE"
 	exit 0
 }
-trap 'cleanup' SIGQUIT SIGTERM
 while true;
 do
 	echo "To infinity and beyond"
-	sleep 1
+	sleep 2
+	trap 'echo "Y U no love me?!"' SIGINT
+	trap 'echo "I hate the kill command" && cleanup' SIGTERM
+	trap 'cleanup' SIGQUIT
 done
-trap 'echo "I hate the kill command"' 15
-trap 'echo "Y U no love me?!"' 2
