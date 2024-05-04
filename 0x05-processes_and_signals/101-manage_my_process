@@ -12,7 +12,7 @@ then
 	echo "manage_my_process stopped"
 elif [ "$1" == "restart" ]
 then
-	kill "$(pgrep -f /manage_my_processes)"
+	kill "$(pgrep -f /manage_my_process)"
 	rm /var/run/my_process.pid
 	./manage_my_process &
 	echo $$ > /var/run/my_process.pid
