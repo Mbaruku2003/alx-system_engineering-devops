@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # groups visitors by IP and HTTP status code, and displays this data.
-awk '{ip_count[$1" "$9]++} END {for (i in ip_count) print ip_count[i], i}' access.log \ | sort -rn
+LOG_FILE="access.log"
+awk '{print $1, $9}' "$LOG_FILE" | sort | uniq -c | sort -nr | awk '{print $1, $2, $3}'
