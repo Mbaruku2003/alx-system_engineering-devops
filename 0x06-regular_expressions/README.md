@@ -16,6 +16,6 @@ a? or or one of a
 a+ 1 or more of a
 a* 0 or more of a
 a{3} a mentioned 3 times
-a{3-6} a mentioned three to six times
+a{3,6} a mentioned three to six times
 a{3, } a mentioned 3 or more times
-
+Nb: in a{3,6} there should not be a space
