@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #configures an Ubuntu server with the below requirements.
 LOCALHOST_IP="127.0.0.2"
-FACEBOOK_ip="8.8.8.8"
+FACEBOOK_IP="8.8.8.8"
 sudo sed -i "?localhost/ s/.*/$LOCALHOST_IP localhost/" /etc/hosts
 sudo sed -i "?facebook.com/ s/.*/$FACEBOOK_IP facebook.com/" /etc/hosts
 sudo systemd-resolve --flush-caches
