@@ -1,3 +1,3 @@
 Host *
-   passwordAuthentication no
+   PasswordAuthentication no
    IdentityFile ~/.ssh/school
