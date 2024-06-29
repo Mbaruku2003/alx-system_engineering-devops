@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#ssh -l is used to specify our username and hostname
+ssh -l ~/.ssh/school ubuntu@100.27.10.146
