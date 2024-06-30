@@ -5,3 +5,4 @@ Host 233057-web-01
    User ubuntu
    IdentityFile ~/.ssh/school
    PasswordAuthentication no
+   Port 22
