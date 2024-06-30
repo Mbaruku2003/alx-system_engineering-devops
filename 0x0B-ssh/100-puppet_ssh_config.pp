@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#set up your client SSH configuration file so that you can connect to a server without typing a password.
+#set up file so that you connect to a server without a password.
 file {'/etc/ssh/ssh_config':
    ensure => 'present',
 }
@@ -15,5 +15,5 @@ file_line {'Declare Identity file':
    path    => '/etc/ssh/ssh_config',
    line    => 'IdentityFile ~/.ssh/school',
    match   => '^IdentityFile',
-   replace => 'present',
+   ensure => 'present',
 }
