@@ -3,14 +3,16 @@
 file {'/etc/ssh/ssh_config':
    ensure => 'present',
 }
+
 file_line {'Turn off passwd auth':
    path    => '/etc/ssh/ssh_config',
    line    => 'PasswordAuthentication no',
    match   => 'PasswordAuthetication yes',
    replace => 'true',
 }
-file_line {'Use a Identity file':
-   file    => '/etc/ssh/ssh_config',
+
+file_line {'Declare Identity file':
+   path    => '/etc/ssh/ssh_config',
    line    => 'IdentityFile ~/.ssh/school',
    match   => '^IdentityFile',
    replace => 'present',
