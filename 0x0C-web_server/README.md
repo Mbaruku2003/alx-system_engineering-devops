@@ -12,3 +12,4 @@ Display Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY if less 
 scp must transfer the file to the user home directory ~/
 Strict host key checking must be disabled when using scp
 	
+id
