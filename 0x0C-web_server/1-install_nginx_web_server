@@ -6,4 +6,3 @@ sudo apt-get -y -install nginx
 sudo service nginx start
 echo "Hello World" | sudo tee /var/www/html/index.nginx-debian.html
 sudo /etc/init.d/nginx restart
-curl 127.0.0.1
