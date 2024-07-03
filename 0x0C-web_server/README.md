@@ -12,4 +12,6 @@ Display Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY if less 
 scp must transfer the file to the user home directory ~/
 Strict host key checking must be disabled when using scp
 	
-id
+we use apt-get -y install what_u_want_to_install to install something in ubuntu without the system asking for permission
+to install nginxwe use apt-get -y install nginx
+to start nginx we use - service nginx start
