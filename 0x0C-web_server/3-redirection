@@ -6,5 +6,5 @@ sudo apt-get -y install nginx
 sudo service nginx start
 echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
 rep_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/default permanent;"
-sudo sed -i "s/server_name _;/$rep_string/" /etc/nginx/sites-enamled/default
+sudo sed -i "s/server_name _;/$rep_string/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
