@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #nginx should listen at port 80
 #when querrying nginx at its root with a get it must return a page with Hello World
-sudo apt pdate
+sudo apt update
 sudo apt-get -y -install nginx
 sudo service nginx start
 echo "Hello World" | sudo tee /var/www/html/index.nginx-debian.html
