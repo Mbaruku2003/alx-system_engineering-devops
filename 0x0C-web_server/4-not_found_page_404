@@ -8,6 +8,6 @@ echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
 rep_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/default permanent;"
 sudo sed -i "s/server_name _;/$rep_string/" /etc/nginx/sites-enabled/default
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-rep_string="listen 80 default_server;\n\tthe_error_page 404 \/404.html;\n\t\location = \/404.html {\n\troot \/var/www/html;\n\tinternal;\n\t}"
+rep_string="listen 80 default_server;\n\tthe_error_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\tinternal;\n\t}"
 sudo sed -i "s/listen 80 default_server;/$rep_string/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
