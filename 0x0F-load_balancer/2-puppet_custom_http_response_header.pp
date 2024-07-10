@@ -1,23 +1,10 @@
-#install nginx and config header file
-exec {  'update':
-A
-  command  =>    'sudo apt-get update',
-  provider =>    shell,
-}
-package {  'nginx':
-  ensure   =>    installed,
-  require  =>    Exec['update'],
-}
+#!/usr/bin/env bash
+# file to configure
 
-file_line {  'headercustom':
-   ensure  =>    present
-   path    =>    'etc/nginx/sites-available/default',
-   after   =>    ':80 default_server;',
-   line    =>    "add_header X-Served-By ${hostname};",
-   require =>    Package['nginx'],
-}
-
-service {  'nginx':
-   ensure   =>   running,
-   require  =>   File_line['headercustom'],
+exec  {  'http header':
+	  command  => 'sudo apt-get update -y;
+	  sudo apt-get install nginx -y;
+	  sudo sed -i "/server_name  _/a add_header  X-Served-By HOSTNAME;" /etc/nginx/sites-available/default
+	  sudo service nginx restart',
+	  provider  =>  shell,
 }
