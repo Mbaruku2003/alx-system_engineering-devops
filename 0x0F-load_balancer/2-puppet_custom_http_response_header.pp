@@ -1,4 +1,3 @@
-#!/bin/bash
 #install nginx and config header file
 exec {  'update':
 A
