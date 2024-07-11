@@ -35,11 +35,11 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend 54.175.146.193
+frontend leonardjembe
         #sets a custm default conectivity timer
         timeout client 50000
-        bind 0:80
-        bind 0:443 ssl crt /etc/letsencrypt/live/www.leonardjembe.tech/leonardjembe.pem
+        bind *:80
+        bind *:443 ssl crt /etc/letsencrypt/live/www.leonardjembe.tech/leonardjembe.pem
         default_backend 54.175.146.193_backend
 
 backend 54.175.146.193_backend
