@@ -1,22 +1,16 @@
 #!/usr/bin/python3
-"""Query subscribers of a given reddit subreddit"""
+"""uses reddit to print the number of subscribers."""
 import requests
-import json
 
 
 def number_of_subscribers(subreddit):
-    """returns the number of subscribers for a subreddit."""
+    """get the number of subscribers."""
 
-    url = f"https:www.reddit.com/r/{subreddit}/about.json"
-
-    header = {'User-Agent': 'Python:subscribers-check:v1.0 (b /u/yourusername)'
-            }
-    try:
-        response = rquests.get(url, headers=headers, allow_redirects=False)
-        if response.status_code == 200:
-            data = response.json()
-            return data['data']['subscribers']
-        else:
-            return 0
-    except requests.RequestException:
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    headers = {'User-Agent': 'requests'}
+    response = requests.get(url, headers=headers, allow_redirects=False)
+    if response.status_code != 200:
         return 0
+    data = response.json().get("data")
+    number_subscribers = data.get("subscribers")
+    return number_subscribers
