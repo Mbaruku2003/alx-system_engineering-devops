@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import requests
 """detailed info."""
+import requests
 
 
 def recurse(subreddit, hot_list=[]):
