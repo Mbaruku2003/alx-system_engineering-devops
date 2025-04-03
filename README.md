@@ -1,1 +1,1 @@
-chmod u + X is used to create scripts
+using chmod u + X is used to create scripts
