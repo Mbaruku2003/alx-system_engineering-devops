@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+"""export data in JSN format."""
 import requests
 import sys
 import json
 
+
 def export_to_json(employee_id):
+    """export data in JSON format."""
+
     # Define the API endpoints
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
