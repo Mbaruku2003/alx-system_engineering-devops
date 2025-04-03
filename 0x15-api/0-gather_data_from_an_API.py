@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+"""we will be json data from a http request"""
 import requests
 import sys
 
+
 def get_employee_todo_progress(employee_id):
+    """we can get the required data."""
+
     # Define the API endpoints
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
