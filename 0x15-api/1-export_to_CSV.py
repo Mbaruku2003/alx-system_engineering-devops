@@ -28,7 +28,7 @@ def export_to_csv(employee_data):
 
         #write each task to the csv
         for todo in todosdata:
-            csv_writer.writerow([employee_id, username, todo['completed'], todo['title']])
+            csv_writer.writerow([employee_id, usrname, todo['completed'], todo['title']])
     print(f"Data exported to {csv_file}")
 
 if __name__ == "__main__":
